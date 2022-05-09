@@ -1,0 +1,70 @@
+.kernel-package {
+	box-sizing: border-box;
+	inline-size: 100%;
+	padding: 10px;
+	border-radius: 8px;
+	border: 2px solid transparent;
+	background-color: var(--kernel-background-primary);
+	transition: 150ms ease;
+}
+
+.kernel-package.enabled {
+	border-color: var(--kernel-accent-primary);
+	box-shadow: 0 2px 4px var(--kernel-accent-faded);
+}
+
+.kernel-package-header {
+	margin-block-end: 8px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.kernel-package-name {
+	font-weight: 600;
+	font-size: 15px;
+	line-height: 1;
+	margin: 0;
+	color: var(--kernel-accent-primary);
+}
+
+.kernel-package-description {
+	color: var(--kernel-foreground-secondary);
+	font-size: 12px;
+	line-height: 1.6;
+	margin: 0;
+}
+
+.kernel-package-footer {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin-block-start: 8px;
+}
+
+.kernel-package-button {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: 12px;
+	font-weight: 600;
+	padding-inline: 8px;
+	padding-block: 2px;
+	border-radius: 50px;
+	border: none;
+	background-color: var(--kernel-interactive-primary);
+	color: var(--kernel-foreground-secondary);
+}
+
+.kernel-package-button > svg {
+	inline-size: 12px;
+	block-size: 12px;
+	margin-inline-end: 4px;
+	fill: currentColor;
+}
+
+.kernel-package-button.danger {
+	color: var(--kernel-status-danger);
+}

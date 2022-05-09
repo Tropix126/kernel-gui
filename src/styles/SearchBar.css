@@ -1,0 +1,24 @@
+.kernel-search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    inline-size: 100%;
+    background-color: var(--kernel-background-primary);
+    border-radius: 4px;
+}
+
+.kernel-search-bar-input {
+    flex: 1 1 auto;
+    min-inline-size: 0;
+    background-color: transparent;
+    block-size: 24px;
+    border: none;
+}
+
+.kernel-search-bar-button {
+    flex: 0 0 auto;
+    border: none;
+    block-size: 100%;
+    min-block-size: 0;
+    background-color: var(--kernel-interactive-primary);
+}

@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
+
+:root {
+	font-family: "Manrope", sans-serif;
+
+	--kernel-base-hue: 37deg;
+
+	--kernel-accent-primary: hsl(var(--kernel-base-hue), 69%, 76%);
+	--kernel-accent-faded: hsla(var(--kernel-base-hue), 69%, 76%, 50%);
+
+	--kernel-foreground-primary: hsl(var(--kernel-base-hue), 0%, 100%);
+	--kernel-foreground-secondary: hsl(var(--kernel-base-hue), 75%, 87%);
+	--kernel-foreground-tertiary: hsl(var(--kernel-base-hue), 18%, 64%);
+
+	--kernel-background-primary: hsl(var(--kernel-base-hue), 5%, 11%);
+	--kernel-background-secondary: hsl(var(--kernel-base-hue), 5%, 9%);
+	--kernel-background-tertiary: hsl(var(--kernel-base-hue), 3%, 8%);
+
+	--kernel-interactive-primary: hsl(var(--kernel-base-hue), 7%, 15%);
+	--kernel-interactive-secondary: hsl(var(--kernel-base-hue), 7%, 24%);
+	--kernel-interactive-tertiary: hsl(var(--kernel-base-hue), 7%, 32%);
+
+	--kernel-status-danger: hsl(0, 66%, 56%);
+}
+
+html,
+body {
+	user-select: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+*:focus-visible {
+	outline: none;
+	z-index: 10;
+	transition: 150ms ease box-shadow;
+	box-shadow: 0 0 0 3px var(--kernel-accent-faded);
+}
+
+.kernel-app-window {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
+	background: var(--kernel-background-secondary);
+	border: 1px solid #202020;
+	box-shadow: 0px 4.7px 3.2px rgb(0 0 0 / 3%), 0px 11.4px 7.6px rgb(0 0 0 / 4%),
+		0px 21.4px 14.4px rgb(0 0 0 / 6%), 0px 38.2px 25.7px rgb(0 0 0 / 7%),
+		0px 71.4px 48px rgb(0 0 0 / 8%), 0px 171px 115px rgb(0 0 0 / 11%);
+}
+
+.kernel-navigation-bar {
+	z-index: 1;
+	position: relative;
+	display: flex;
+	align-items: center;
+	block-size: 48px;
+	background: var(--kernel-background-primary);
+	box-shadow: 0 3px 4px rgb(0 0 0 / 10%);
+}
+
+.kernel-page {
+	box-sizing: border-box;
+	overflow: auto;
+	max-block-size: 100%;
+	min-block-size: 0;
+	padding: 24px;
+}
+
+/* Temporary stuff */
+
+body {
+	background-color: #0f0f0f;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+body::after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	inset: 0;
+	inline-size: 100%;
+	block-size: 100%;
+	opacity: 0.15;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='a'%3E%3CfeTurbulence baseFrequency='0.0025 0.005' seed='2'%3E%3C/feTurbulence%3E%3CfeDiffuseLighting lighting-color='%230f0f0f' surfaceScale='100'%3E%3CfeDistantLight azimuth='2' elevation='20'%3E%3C/feDistantLight%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'%3E%3C/rect%3E%3C/svg%3E")
+		center/cover no-repeat;
+}
+
+.kernel-app-window {
+	border-radius: 8px;
+	border: 1px solid #202020;
+	inline-size: 700px;
+	block-size: 500px;
+}
+
+@keyframes raninbow {
+	0% {
+		--kernel-base-hue: 0deg;
+	}
+	100% {
+		--kernel-base-hue: 360deg;
+	}
+}
