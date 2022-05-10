@@ -22,7 +22,7 @@ export default function SearchBar(props: Props) {
 	const [value, setValue] = createSignal(local.value);
 
 	const handleInput = (value) => {
-		setValue((event.target as HTMLInputElement).value);
+		setValue(value);
 		if (typeof local.onChange === "function") local.onChange(value);
 	}
 
