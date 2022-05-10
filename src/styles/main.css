@@ -19,7 +19,7 @@
 	--kernel-interactive-primary: hsl(var(--kernel-base-hue), 7%, 15%);
 	--kernel-interactive-secondary: hsl(var(--kernel-base-hue), 7%, 18%);
 	--kernel-interactive-tertiary: hsl(var(--kernel-base-hue), 7%, 24%);
-    --kernel-interactive-quarternary: hsl(var(--kernel-base-hue), 7%, 32%);
+	--kernel-interactive-quarternary: hsl(var(--kernel-base-hue), 7%, 32%);
 
 	--kernel-status-danger: hsl(0, 66%, 56%);
 }
@@ -34,6 +34,8 @@ body {
 }
 
 .kernel-app-window {
+	display: flex;
+	flex-direction: column;
 	position: relative;
 	overflow: hidden;
 	width: 100%;

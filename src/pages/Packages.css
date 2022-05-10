@@ -16,5 +16,5 @@
 }
 
 .kernel-packages-header .kernel-search-bar {
-	max-width: 148px;
+	max-inline-size: 160px;
 }

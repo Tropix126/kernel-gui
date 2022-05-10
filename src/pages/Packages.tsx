@@ -15,12 +15,20 @@ export default function Packages() {
 		<>
 			<div class="kernel-packages-header">
 				<Text variant="title">Installed Packages — {data.packages.length}</Text>
-				<SearchBar placeholder="Search..." value={searchValue()} onChange={setSearchValue} />
+				<SearchBar
+					placeholder="Search..."
+					value={searchValue()}
+					onChange={setSearchValue}
+				/>
 			</div>
 			<div class="kernel-packages">
-				<For each={data.packages.filter(p => p.name.toLowerCase().includes(searchValue().toLocaleLowerCase()))}>
-                    {p => <Package {...p} />}
-                </For>
+				<For
+					each={data.packages.filter(p =>
+						p.name.toLowerCase().includes(searchValue().toLocaleLowerCase())
+					)}
+				>
+					{p => <Package {...p} />}
+				</For>
 			</div>
 		</>
 	);

@@ -6,6 +6,7 @@ export default {
 	packages: [
 		{
 			name: "test package 0",
+			authors: ["me"],
 			description: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
 			enabled: true
 		},
