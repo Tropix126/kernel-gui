@@ -56,6 +56,16 @@
 	border: none;
 	background-color: var(--kernel-interactive-primary);
 	color: var(--kernel-foreground-secondary);
+    transition: 150ms ease;
+}
+
+.kernel-package-button:hover {
+    background-color: var(--kernel-interactive-secondary);
+}
+
+.kernel-package-button:active {
+    transform: scale(0.975);
+    background-color: var(--kernel-interactive-tertiary);
 }
 
 .kernel-package-button > svg {

@@ -1,50 +1,48 @@
-import { createSignal, mergeProps } from "solid-js";
+import { createSignal, splitProps, mergeProps } from "solid-js";
 
 import SearchIcon from "../icons/Search";
+import CloseIcon from "../icons/Close";
 
 import "../styles/SearchBar.css";
 
 interface Props {
 	value: string;
 	placeholder?: string;
-	onChange: (value: string) => void;
-	onSearch: (value: string) => void;
+	onChange?: (value: string) => void;
 	[key: string]: any;
 }
 
 const defaultProps = {
-	value: "",
-	placeholder: ""
+	value: ""
 };
 
 export default function SearchBar(props: Props) {
-	const merged = mergeProps(defaultProps, props);
-	const [value, setValue] = createSignal(merged.value);
+	const [local, rest] = splitProps(mergeProps(defaultProps, props), ["value", "placeholder", "onChange"]);
 
-	const onChange = (event: Event) => {
+	const [value, setValue] = createSignal(local.value);
+
+	const handleInput = (value) => {
 		setValue((event.target as HTMLInputElement).value);
-		if (typeof merged.onChange === "function") merged.onChange(value());
-	}
-
-	const onSearch = () => {
-		if (typeof merged.onSearch === "function") merged.onSearch(value());
+		if (typeof local.onChange === "function") local.onChange(value);
 	}
 
 	return (
 		<div class="kernel-search-bar">
 			<input
 				type="search"
-				value={value()}
-				placeholder={merged.placeholder}
-				onChange={onChange}
 				class="kernel-search-bar-input"
+				value={value()}
+				placeholder={local.placeholder}
+				onInput={event => handleInput((event.target as HTMLInputElement).value)}
+                {...rest}
 			/>
 			<button
 				class="kernel-search-bar-button"
-				onClick={onSearch}
-				aria-label="Search"
+                classList={{ interactive: value().length > 0 }}
+                onClick={() => handleInput("")}
 			>
-				<SearchIcon />
+                <CloseIcon class="kernel-search-bar-clear-icon" />
+                <SearchIcon class="kernel-search-bar-search-icon" />
 			</button>
 		</div>
 	);

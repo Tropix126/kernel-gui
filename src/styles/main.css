@@ -17,8 +17,9 @@
 	--kernel-background-tertiary: hsl(var(--kernel-base-hue), 3%, 8%);
 
 	--kernel-interactive-primary: hsl(var(--kernel-base-hue), 7%, 15%);
-	--kernel-interactive-secondary: hsl(var(--kernel-base-hue), 7%, 24%);
-	--kernel-interactive-tertiary: hsl(var(--kernel-base-hue), 7%, 32%);
+	--kernel-interactive-secondary: hsl(var(--kernel-base-hue), 7%, 18%);
+	--kernel-interactive-tertiary: hsl(var(--kernel-base-hue), 7%, 24%);
+    --kernel-interactive-quarternary: hsl(var(--kernel-base-hue), 7%, 32%);
 
 	--kernel-status-danger: hsl(0, 66%, 56%);
 }
@@ -30,13 +31,6 @@ body {
 	padding: 0;
 	width: 100%;
 	height: 100%;
-}
-
-*:focus-visible {
-	outline: none;
-	z-index: 10;
-	transition: 150ms ease box-shadow;
-	box-shadow: 0 0 0 3px var(--kernel-accent-faded);
 }
 
 .kernel-app-window {

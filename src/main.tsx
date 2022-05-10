@@ -7,11 +7,12 @@ import TabBar from "./components/TabBar";
 import Titlebar from "./components/Titlebar";
 
 import Packages from "./pages/Packages";
+import Home from "./pages/Home";
 
 import "./styles/main.css";
 
 const PAGES = {
-	// home: <Home />,
+	home: <Home />,
 	// settings: <Settings />,
 	packages: <Packages />
 };
