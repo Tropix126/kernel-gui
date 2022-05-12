@@ -21,6 +21,30 @@ export default {
 			description:
 				"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
 			enabled: false
+		},
+		{
+			name: "test package 3"
+		},
+		{
+			name: "test package 3"
+		},
+		{
+			name: "test package 3"
+		},
+		{
+			name: "test package 3"
+		},
+		{
+			name: "test package 3"
+		},
+		{
+			name: "test package 3"
+		},
+		{
+			name: "test package 3"
+		},
+		{
+			name: "test package 3"
 		}
 	],
 	pages: [

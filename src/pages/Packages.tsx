@@ -10,11 +10,14 @@ import data from "../data";
 
 export default function Packages() {
 	const [searchValue, setSearchValue] = createSignal("");
+	const foundPackages = () => data.packages.filter(p => p.name.toLowerCase().includes(searchValue().toLocaleLowerCase()));
 
 	return (
 		<>
 			<div class="kernel-packages-header">
-				<Text variant="title">Installed Packages — {data.packages.length}</Text>
+				<Text variant="title">
+					{searchValue() ? "Search Results" : "Installed Packages"} — {foundPackages().length}
+				</Text>
 				<SearchBar
 					placeholder="Search..."
 					value={searchValue()}
@@ -22,11 +25,7 @@ export default function Packages() {
 				/>
 			</div>
 			<div class="kernel-packages">
-				<For
-					each={data.packages.filter(p =>
-						p.name.toLowerCase().includes(searchValue().toLocaleLowerCase())
-					)}
-				>
+				<For each={foundPackages()}>
 					{p => <Package {...p} />}
 				</For>
 			</div>
