@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
 
 :root {
+	color-scheme: dark;
 	font-family: "Manrope", sans-serif;
 
 	--kernel-base-hue: 37deg;

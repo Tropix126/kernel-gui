@@ -18,7 +18,7 @@ export default function Packages() {
 				<SearchBar
 					placeholder="Search..."
 					value={searchValue()}
-					onChange={setSearchValue}
+					onInput={setSearchValue}
 				/>
 			</div>
 			<div class="kernel-packages">

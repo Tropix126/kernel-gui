@@ -22,11 +22,13 @@
 	background-color: var(--kernel-accent-primary);
 }
 
-.kernel-switch:hover {
+.kernel-switch:hover,
+label:hover .kernel-switch {
 	box-shadow: inset 0 0 0 1px var(--kernel-interactive-quarternary);
 }
 
-.kernel-switch:active::before {
+.kernel-switch:active::before,
+label:active .kernel-switch::before {
 	inline-size: calc(100% - 8px);
 }
 
@@ -39,11 +41,13 @@
 	background-color: var(--kernel-background-primary);
 }
 
-.kernel-switch.checked:hover {
+.kernel-switch.checked:hover,
+label:hover .kernel-switch.checked {
 	box-shadow: 0 2px 4px var(--kernel-accent-faded);
 }
 
-.kernel-switch.checked:active::before {
+.kernel-switch.checked:active::before,
+label:active .kernel-switch.checked::before {
 	inset-inline-start: 4px;
 }
 
