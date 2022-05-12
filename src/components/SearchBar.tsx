@@ -7,10 +7,8 @@ import "../styles/SearchBar.css";
 
 interface Props {
 	value: string;
-	placeholder?: string;
 	disabled: boolean;
-	onChange?: (value: string) => void;
-	[key: string]: any;
+	onInput?: (value: string) => void;
 }
 
 const defaultProps = {
@@ -22,15 +20,14 @@ export default function SearchBar(props: Props) {
 	const [local, rest] = splitProps(mergeProps(defaultProps, props), [
 		"value",
 		"disabled",
-		"placeholder",
-		"onChange"
+		"onInput"
 	]);
 
 	const [value, setValue] = createSignal(local.value);
 
 	const handleInput = value => {
 		setValue(value);
-		if (typeof local.onChange === "function") local.onChange(value);
+		if (typeof local.onInput === "function") local.onInput(value);
 	};
 
 	return (
