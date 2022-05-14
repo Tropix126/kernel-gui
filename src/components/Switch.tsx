@@ -3,7 +3,7 @@ import { createSignal, mergeProps } from "solid-js";
 import "../styles/Switch.css";
 
 interface Props {
-	checked: boolean;
+	checked?: boolean;
 	onChange?: (checked) => void;
 }
 

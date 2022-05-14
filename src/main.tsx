@@ -6,14 +6,15 @@ import data from "./data";
 import TabBar from "./components/TabBar";
 import Titlebar from "./components/Titlebar";
 
-import Packages from "./pages/Packages";
 import Home from "./pages/Home";
+import Packages from "./pages/Packages";
+import Settings from "./pages/Settings";
 
 import "./styles/main.css";
 
 const PAGES = {
 	home: <Home />,
-	// settings: <Settings />,
+	settings: <Settings />,
 	packages: <Packages />
 };
 

@@ -26,14 +26,19 @@ export default function TabBar(props: Props) {
 	const merged: Props = mergeProps(defaultProps, props);
 
 	let tabBarRef: HTMLDivElement = null;
-	const [selected, setSelected] = createSignal(merged.items.find(i => i.value === merged.value));
-	const [selectedItemRef, setSelectedItemRef] = createSignal<HTMLElement>(null);
+	const [selected, setSelected] = createSignal(
+		merged.items.find(i => i.value === merged.value)
+	);
+	const [selectedItemRef, setSelectedItemRef] =
+		createSignal<HTMLElement>(null);
 
 	createEffect(() => {
 		if (selected()?.value) {
 			merged.onChange(selected().value);
 			setSelectedItemRef(
-				(Array.from(tabBarRef.children) as HTMLElement[])[merged.items.indexOf(selected())]
+				(Array.from(tabBarRef.children) as HTMLElement[])[
+					merged.items.indexOf(selected())
+				]
 			);
 		}
 	});
@@ -66,7 +71,8 @@ export default function TabBar(props: Props) {
 				{(item, index) => {
 					const { name, value, icon, disabled, ...rest } = item;
 					const isSelected = () => selected()?.value === value;
-					const tabbable = () => (selected()?.value ? isSelected() : index() === 0);
+					const tabbable = () =>
+						selected()?.value ? isSelected() : index() === 0;
 
 					return (
 						<button

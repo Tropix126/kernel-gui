@@ -3,13 +3,8 @@ import { mergeProps, splitProps } from "solid-js";
 
 import "../styles/Text.css";
 
-enum Tags {
-	caption = "span",
-	title = "h1"
-}
-
 interface Props {
-	variant: "caption" | "title";
+	variant?: "caption" | "title";
 	[key: string]: any;
 }
 
@@ -17,8 +12,23 @@ const defaultProps = {
 	variant: "caption"
 };
 
-export default function Text(props: Props) {
-	const [local, rest] = splitProps(mergeProps(defaultProps, props), ["variant"]);
+const defaultTags = {
+	caption: "span",
+	title: "h1"
+};
 
-	return <Dynamic class={`kernel-${local.variant}`} component={Tags[local.variant]} {...rest} />;
+export default function Text(props: Props) {
+	const [local, rest] = splitProps(mergeProps(defaultProps, props), [
+		"variant",
+		"tag"
+	]);
+
+	return (
+		<Dynamic
+			class={`kernel-${local.variant}`}
+			component={local.tag || defaultTags[local.variant]}
+			{...rest}
+			s
+		/>
+	);
 }

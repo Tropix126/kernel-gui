@@ -40,9 +40,14 @@ export default function Package(props: Props) {
 				<h2 class="kernel-package-name">
 					{merged.name}
 					<Show when={merged.authors}>
-						<span class="kernel-package-authors"> by {new Intl.ListFormat("en", { style: "long", type: "conjunction" }).format(
-							merged.authors
-						)}</span>
+						<span class="kernel-package-authors">
+							{" "}
+							by{" "}
+							{new Intl.ListFormat("en", {
+								style: "long",
+								type: "conjunction"
+							}).format(merged.authors)}
+						</span>
 					</Show>
 				</h2>
 				<Switch onChange={onChange} checked={enabled()} />

@@ -57,7 +57,7 @@
 }
 
 .kernel-search-bar-button:disabled {
-    cursor: default;
+	cursor: default;
 }
 
 .kernel-search-bar-button::before {

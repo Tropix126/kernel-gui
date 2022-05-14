@@ -7,7 +7,8 @@ export default {
 		{
 			name: "test package 0",
 			authors: ["me"],
-			description: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+			description:
+				"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
 			enabled: true
 		},
 		{
@@ -67,4 +68,4 @@ export default {
 			"aria-controls": "settings-page"
 		}
 	]
-};
+} as any;
