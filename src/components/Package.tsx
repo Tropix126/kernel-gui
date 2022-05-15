@@ -54,7 +54,9 @@ export default function Package(props: Props) {
 				<Switch onChange={onChange} checked={enabled()} />
 			</label>
 			<Show when={merged.description}>
-				<Text variant="caption" class="kernel-package-description">{merged.description}</Text>
+				<Text variant="caption" class="kernel-package-description">
+					{merged.description}
+				</Text>
 			</Show>
 			<div class="kernel-package-footer">
 				<button onClick={onDelete} class="kernel-package-button">

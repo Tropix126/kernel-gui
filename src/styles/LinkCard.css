@@ -10,7 +10,7 @@
 }
 
 .kernel-link-card:hover .kernel-link-card-icon {
-    background-color: var(--kernel-interactive-secondary);
+	background-color: var(--kernel-interactive-secondary);
 }
 
 .kernel-link-card:active {
@@ -31,7 +31,7 @@
 	height: 36px;
 	background-color: var(--kernel-interactive-primary);
 	color: var(--kernel-accent-primary);
-    transition: 150ms ease;
+	transition: 150ms ease;
 }
 
 .kernel-link-card-icon svg {

@@ -5,33 +5,32 @@ import Text from "./Text";
 import "../styles/LinkCard.css";
 
 const defaultProps = {
-    title: "",
-    description: "",
-    href: "",
-    icon: null
-}
+	title: "",
+	description: "",
+	href: "",
+	icon: null
+};
 
 interface Props {
-    title: string;
-    href: string;
-    description?: string;
-    icon?: any;
-    [key: string]: any;
+	title: string;
+	href: string;
+	description?: string;
+	icon?: any;
+	[key: string]: any;
 }
 
 export default function LinkCard(props: Props) {
-    const [merged, rest] = splitProps(mergeProps(defaultProps, props), ["title", "href", "description", "icon"]);
+	const [merged, rest] = splitProps(mergeProps(defaultProps, props), [
+		"title",
+		"href",
+		"description",
+		"icon"
+	]);
 
 	return (
-		<a
-			href={merged.href}
-			class="kernel-link-card"
-            {...rest}
-		>
+		<a href={merged.href} class="kernel-link-card" {...rest}>
 			<div class="kernel-link-card-icon">
-				<Show when={merged.icon}>
-					{merged.icon}
-				</Show>
+				<Show when={merged.icon}>{merged.icon}</Show>
 			</div>
 			<div class="kernel-link-card-info">
 				<Text variant="title" class="kernel-link-card-title">

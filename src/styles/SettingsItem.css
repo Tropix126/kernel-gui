@@ -12,8 +12,8 @@
 
 .kernel-settings-item-title {
 	flex: 1 1 auto;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 1;
-    color: var(--kernel-accent-primary);
+	font-weight: 600;
+	font-size: 15px;
+	line-height: 1;
+	color: var(--kernel-accent-primary);
 }

@@ -22,13 +22,22 @@ export default function Package(props: Props) {
 	return (
 		<div class="kernel-settings-item">
 			<label class="kernel-settings-item-header">
-				<Text class="kernel-settings-item-title" variant="title" tag="h2">{merged.title}</Text>
+				<Text
+					class="kernel-settings-item-title"
+					variant="title"
+					tag="h2"
+				>
+					{merged.title}
+				</Text>
 				<div class="kernel-settings-item-control">
 					<Switch />
 				</div>
 			</label>
 			<Show when={merged.description}>
-				<Text variant="caption" class="kernel-settings-item-description">
+				<Text
+					variant="caption"
+					class="kernel-settings-item-description"
+				>
 					{merged.description}
 				</Text>
 			</Show>
