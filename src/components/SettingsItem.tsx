@@ -1,19 +1,19 @@
-import { createSignal, mergeProps } from "solid-js";
+import { Show, createSignal, mergeProps } from "solid-js";
 
 import Switch from "./Switch";
 import Text from "./Text";
 
-import "../styles/Package.css";
+import "../styles/SettingsItem.css";
 
 interface Props {
-	name: string;
+	title: string;
+	description?: string;
+	type: "switch" | "text";
 	onToggle?: (enabled) => void;
 }
 
 const defaultProps = {
-	name: "",
-	description: "",
-	value: undefined
+	description: ""
 };
 
 export default function Package(props: Props) {
@@ -22,14 +22,16 @@ export default function Package(props: Props) {
 	return (
 		<div class="kernel-settings-item">
 			<label class="kernel-settings-item-header">
-				<Text variant="title" class="kernel-settings-item-name">
-					{merged.name}
-				</Text>
-				<Switch />
+				<Text class="kernel-settings-item-title" variant="title" tag="h2">{merged.title}</Text>
+				<div class="kernel-settings-item-control">
+					<Switch />
+				</div>
 			</label>
-			<Text variant="caption" class="kernel-settings-item-description">
-				{merged.description}
-			</Text>
+			<Show when={merged.description}>
+				<Text variant="caption" class="kernel-settings-item-description">
+					{merged.description}
+				</Text>
+			</Show>
 		</div>
 	);
 }

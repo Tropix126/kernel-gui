@@ -20,15 +20,18 @@ const defaultTags = {
 export default function Text(props: Props) {
 	const [local, rest] = splitProps(mergeProps(defaultProps, props), [
 		"variant",
-		"tag"
+		"tag",
+		"class"
 	]);
 
 	return (
 		<Dynamic
-			class={`kernel-${local.variant}`}
+			classList={{
+				[`kernel-${local.variant}`]: true,
+				[local.class]: true
+			}}
 			component={local.tag || defaultTags[local.variant]}
 			{...rest}
-			s
 		/>
 	);
 }

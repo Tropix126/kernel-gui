@@ -25,20 +25,12 @@
 	font-weight: 600;
 	font-size: 15px;
 	line-height: 1;
-	margin: 0;
 	color: var(--kernel-accent-primary);
 }
 
 .kernel-package-authors {
 	font-size: 12px;
 	color: var(--kernel-foreground-tertiary);
-}
-
-.kernel-package-description {
-	color: var(--kernel-foreground-secondary);
-	font-size: 12px;
-	line-height: 1.6;
-	margin: 0;
 }
 
 .kernel-package-footer {
