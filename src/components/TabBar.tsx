@@ -34,7 +34,7 @@ export default function TabBar(props: Props) {
 
 	createEffect(() => {
 		if (selected()?.value) {
-			merged.onChange(selected().value);
+		if (typeof merged.onChange === "function") merged.onChange(selected().value);
 			setSelectedItemRef(
 				(Array.from(tabBarRef.children) as HTMLElement[])[
 					merged.items.indexOf(selected())
