@@ -1,4 +1,8 @@
+import { createEffect, createSignal } from "solid-js";
+
 import LinkCard from "../components/LinkCard";
+import Dialog from "../components/Dialog";
+import Button from "../components/Button";
 
 import Book from "../icons/Book";
 import GitHub from "../icons/GitHub";
@@ -6,9 +10,20 @@ import Comment from "../icons/Comment";
 
 import "./Home.css";
 
+const [open, setOpen] = createSignal(false);
+
 export default function Home(props) {
+	createEffect(() => {
+		console.log(open());
+	})
+
 	return (
 		<>
+			<Button onClick={() => setOpen(!open())}>Open dialog</Button>
+			<Dialog open={open()} title="Dialog">
+				test1
+				<Button onClick={() => setOpen(!open())}>Action</Button>
+			</Dialog>
 			<div class="kernel-home-links">
 				<LinkCard
 					href="https://github.com/kernel-mod/electron"

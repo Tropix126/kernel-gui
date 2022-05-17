@@ -13,31 +13,35 @@ import "../styles/Dialog.css";
 interface Props {
 	title?: string;
 	open?: boolean;
+	closable?: boolean;
     children?: any;
 }
 
 const defaultProps = {
-	open: false
+	open: false,
+	closable: false
 };
 
 export default function Dialog(props: Props) {
-	const [merged, rest] = splitProps(mergeProps(props, defaultProps), [
+	const [merged, rest] = splitProps(mergeProps(defaultProps, props), [
 		"open",
 		"title",
+		"closable",
         "children"
 	]);
-
-	const [open, setOpen] = createSignal(merged.open);
 	let dialogRef: HTMLDialogElement = null;
 
 	createEffect(() => {
-		if (open()) dialogRef.showModal();
+		if (merged.open) {
+			dialogRef?.showModal();
+		} else {
+			dialogRef?.close();
+		}
 	});
 
 	return (
 		<dialog
 			class="kernel-dialog"
-			onClose={() => setOpen(false)}
 			ref={dialogRef}
 			{...rest}
 		>

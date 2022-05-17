@@ -2,6 +2,7 @@
 
 :root,
 ::backdrop {
+	user-select: none;
 	color-scheme: dark;
 	font-family: "Manrope", sans-serif;
 
@@ -52,7 +53,6 @@
 
 html,
 body {
-	user-select: none;
 	margin: 0;
 	padding: 0;
 	inline-size: 100%;
