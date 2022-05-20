@@ -11,10 +11,11 @@ import Text from "./Text";
 import "../styles/Dialog.css";
 
 interface Props {
-	title?: string;
 	open?: boolean;
 	closable?: boolean;
+	title?: any;
     children?: any;
+	footer?: any;
 }
 
 const defaultProps = {
@@ -27,9 +28,14 @@ export default function Dialog(props: Props) {
 		"open",
 		"title",
 		"closable",
-        "children"
+        "children",
+		"footer"
 	]);
 	let dialogRef: HTMLDialogElement = null;
+
+	const handleClose = (event: CloseEvent) => {
+		if (merged.closable) event.preventDefault();
+	}
 
 	createEffect(() => {
 		if (merged.open) {
@@ -43,6 +49,7 @@ export default function Dialog(props: Props) {
 		<dialog
 			class="kernel-dialog"
 			ref={dialogRef}
+			onClose={handleClose}
 			{...rest}
 		>
 			<Show when={merged.title}>
@@ -50,8 +57,12 @@ export default function Dialog(props: Props) {
 					{merged.title}
 				</Text>
 			</Show>
-			<div class="kernel-dialog-body"></div>
-			{merged.children}
+			<div class="kernel-dialog-body">
+				{merged.children}
+			</div>
+			<footer class="kernel-dialog-footer">
+				{merged.footer}
+			</footer>
 		</dialog>
 	);
 }

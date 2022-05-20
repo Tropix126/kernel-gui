@@ -59,7 +59,7 @@
 }
 
 .kernel-package-button.danger {
-	color: var(--kernel-status-danger);
+	color: var(--kernel-foreground-danger);
 }
 
 .kernel-package-button:hover {
@@ -71,7 +71,7 @@
 }
 
 .kernel-package-button.danger:active {
-	background-color: var(--kernel-status-danger);
+	background-color: var(--kernel-foreground-danger);
 	color: var(--kernel-background-primary);
 }
 

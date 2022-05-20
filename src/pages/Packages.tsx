@@ -29,7 +29,7 @@ export default function Packages() {
 				/>
 			</div>
 			<div class="kernel-packages">
-				<For each={foundPackages()}>{p => <Package {...p} />}</For>
+				<For each={foundPackages()}>{(p: any) => <Package {...p} />}</For>
 			</div>
 		</>
 	);

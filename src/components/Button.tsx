@@ -6,6 +6,7 @@ import "../styles/Button.css";
 const defaultProps = {};
 
 interface Props {
+	type: "default" | "accent" | "danger";
 	[key: string]: any;
 }
 

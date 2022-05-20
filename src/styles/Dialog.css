@@ -1,10 +1,3 @@
-@keyframes kernel-dialog {
-	from {
-		transform: scale(0.95) perspective(54px) rotateX(2deg);
-		opacity: 0.5;
-	}
-}
-
 @keyframes kernel-dialog-backdrop {
 	from {
 		opacity: 0;
@@ -12,31 +5,58 @@
 }
 
 .kernel-dialog {
+	opacity: 0;
+	transform: translate(-50%, -50%) scale(0.9) perspective(56px) rotateX(2deg);
+	pointer-events: none;
+	position: fixed;
+	display: flex;
 	flex-direction: column;
+	inset-inline-start: 50%;
+	inset-block-start: 50%;
 	inline-size: 360px;
 	max-inline-size: calc(100% - 24px);
 	min-block-size: 140px;
+	margin: 0;
 	padding: 16px;
 	font-size: 14px;
 	font-weight: 500;
 	line-height: 1.6;
 	border-radius: 6px;
-	animation: kernel-dialog 250ms cubic-bezier(0, 0, 0, 1) forwards;
-	border: 1px solid var(--kernel-background-primary);
+	transition: 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	border: 1px solid var(--kernel-background-tertiary);
 	box-shadow: inset 0 1px 0 var(--kernel-interactive-primary), 0 24px 36px rgba(0, 0, 0, 0.25);
 	background-color: var(--kernel-background-primary);
 	color: var(--kernel-foreground-secondary);
 }
 
 .kernel-dialog[open] {
-	display: flex;
+	pointer-events: auto;
+	transform: translate(-50%, -50%);
+	opacity: 1;
 }
 
 .kernel-dialog::backdrop {
+	background-color: var(--kernel-accent-faded-secondary);
 	animation: kernel-dialog-backdrop 150ms ease forwards;
 	backdrop-filter: blur(8px);
 }
 
 .kernel-dialog-title {
 	margin-block-end: 12px;
+}
+
+.kernel-dialog-footer {
+	display: grid;
+	grid-gap: 8px;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr 1fr;
+}
+
+.kernel-dialog-body {
+	flex: 1 1 auto;
+}
+
+.kernel-dialog-title,
+.kernel-dialog-footer {
+	flex: 0 0 auto;
 }

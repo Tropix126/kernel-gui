@@ -20,9 +20,15 @@ export default function Home(props) {
 	return (
 		<>
 			<Button onClick={() => setOpen(!open())}>Open dialog</Button>
-			<Dialog open={open()} title="Dialog">
+			<Dialog
+				open={open()}
+				title="Dialog"
+				footer={<>
+					<Button onClick={() => setOpen(!open())}>Action</Button>
+					<Button onClick={() => setOpen(!open())}>Scary Action</Button>
+				</>}
+			>
 				test1
-				<Button onClick={() => setOpen(!open())}>Action</Button>
 			</Dialog>
 			<div class="kernel-home-links">
 				<LinkCard

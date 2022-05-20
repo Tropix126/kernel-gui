@@ -1,30 +1,26 @@
 .kernel-button {
-    align-self: flex-end;
-    justify-self: flex-end;
-    margin-top: auto;
-    font-family: inherit;
-    font-size: 14px;
-    outline: none;
-    font-weight: 600;
-    padding: 12px 24px;
-    border-radius: 4px;
-    min-inline-size: 50%;
-    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    background-color: var(--kernel-interactive-primary);
-    color: var(--kernel-accent-primary);
-    border: none;
     box-sizing: border-box;
-    transition: 150ms ease;
+    text-align: center;
+    font-family: inherit;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-inline: 24px;
+    padding-block: 12px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: transparent;
+    background-color: var(--kernel-interactive-primary);
+    color: var(--kernel-foreground-secondary);
+    transition: 50ms ease;
 }
 
 .kernel-button:hover {
-    background-color: var(--kernel-interactive-secondary);
-}
-
-.kernel-button:focus {
-    box-shadow: 0 0 0 3px var(--kernel-accent-faded);
+    background-color: var(--kernel-interactive-primary);
 }
