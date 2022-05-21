@@ -15,6 +15,8 @@ interface Props {
 	authors?: string[];
 	onToggle?: (enabled) => void;
 	onDelete?: () => void;
+	onForceDelete?: () => void;
+	onSettings?: () => void;
 }
 
 const defaultProps = {
@@ -26,14 +28,20 @@ export default function Package(props: Props) {
 	const merged = mergeProps(defaultProps, props);
 	const [enabled, setEnabled] = createSignal(merged.enabled);
 
-	const onChange = value => {
+	const handleChange = value => {
 		setEnabled(value);
-		if (typeof props.onToggle === "function") props.onToggle(enabled());
+		props.onToggle?.(enabled());
 	};
 
-	const onDelete = () => {
-		if (typeof props.onDelete === "function") props.onDelete();
+	const handleDelete = ({ shiftKey }: MouseEvent) => {
+		if (shiftKey) {
+			props.onForceDelete?.();
+		} else {
+			props.onDelete?.();
+		}
 	};
+
+	const handleSettings = () => props.onSettings?.();
 
 	return (
 		<div class="kernel-package" classList={{ enabled: enabled() }}>
@@ -51,7 +59,7 @@ export default function Package(props: Props) {
 						</span>
 					</Show>
 				</Text>
-				<Switch onChange={onChange} checked={enabled()} />
+				<Switch onChange={handleChange} checked={enabled()} />
 			</label>
 			<Show when={merged.description}>
 				<Text variant="caption" class="kernel-package-description">
@@ -59,10 +67,13 @@ export default function Package(props: Props) {
 				</Text>
 			</Show>
 			<div class="kernel-package-footer">
-				<button onClick={onDelete} class="kernel-package-button">
+				<button onClick={handleSettings} class="kernel-package-button">
 					<SettingsIcon />
 				</button>
-				<button onClick={onDelete} class="kernel-package-button danger">
+				<button
+					onClick={handleDelete}
+					class="kernel-package-button danger"
+				>
 					<TrashIcon />
 					Delete
 				</button>

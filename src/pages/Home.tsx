@@ -13,7 +13,7 @@ import "./Home.css";
 const [open, setOpen] = createSignal(false);
 
 export default function Home(props) {
-    createEffect(() => console.log(open()));
+	createEffect(() => console.log(open()));
 
 	return (
 		<>

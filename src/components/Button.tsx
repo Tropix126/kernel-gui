@@ -20,8 +20,8 @@ export default function Button(props: Props) {
 	const [merged, rest] = splitProps(mergeProps(defaultProps, props), [
 		"children",
 		"href",
-        "variant",
-        "disabled"
+		"variant",
+		"disabled"
 	]);
 
 	return (

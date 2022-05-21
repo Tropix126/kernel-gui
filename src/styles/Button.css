@@ -32,7 +32,7 @@
 }
 
 .kernel-button.variant-danger {
-    font-weight: 700;
+	font-weight: 700;
 	background-color: var(--kernel-background-danger);
 	color: var(--kernel-background-tertiary);
 }
