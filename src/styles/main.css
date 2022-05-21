@@ -76,11 +76,6 @@ body {
 	block-size: 100%;
 	border-radius: 8px;
 	background: var(--kernel-background-secondary);
-	border: 1px solid #202020;
-	box-shadow: 0px 4.7px 3.2px rgb(0 0 0 / 3%),
-		0px 11.4px 7.6px rgb(0 0 0 / 4%), 0px 21.4px 14.4px rgb(0 0 0 / 6%),
-		0px 38.2px 25.7px rgb(0 0 0 / 7%), 0px 71.4px 48px rgb(0 0 0 / 8%),
-		0px 171px 115px rgb(0 0 0 / 11%);
 }
 
 .kernel-navigation-bar {
