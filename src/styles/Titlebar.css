@@ -19,6 +19,7 @@
 }
 
 .kernel-titlebar-button {
+    -webkit-app-region: no-drag;
 	padding: 0;
 	block-size: 100%;
 	inline-size: 45px;
