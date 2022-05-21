@@ -17,6 +17,8 @@ dialog {
 		15%
 	);
 
+    animation: bruh 5s infinite;
+
 	--kernel-foreground-primary: hsl(var(--kernel-base-hue), 0%, 100%);
 	--kernel-foreground-secondary: hsl(var(--kernel-base-hue), 75%, 87%);
 	--kernel-foreground-tertiary: hsl(var(--kernel-base-hue), 18%, 64%);
@@ -100,41 +102,4 @@ body {
 	max-block-size: 100%;
 	min-block-size: 0;
 	padding: 24px;
-}
-
-/* Temporary stuff */
-
-body {
-	background-color: #0f0f0f;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-body::after {
-	content: "";
-	position: absolute;
-	z-index: -1;
-	inset: 0;
-	inline-size: 100%;
-	block-size: 100%;
-	opacity: 0.15;
-	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='a'%3E%3CfeTurbulence baseFrequency='0.0025 0.005' seed='2'%3E%3C/feTurbulence%3E%3CfeDiffuseLighting lighting-color='%230f0f0f' surfaceScale='100'%3E%3CfeDistantLight azimuth='2' elevation='20'%3E%3C/feDistantLight%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'%3E%3C/rect%3E%3C/svg%3E")
-		center/cover no-repeat;
-}
-
-.kernel-app-window {
-	border-radius: 8px;
-	border: 1px solid #202020;
-	inline-size: 700px;
-	block-size: 500px;
-}
-
-@keyframes raninbow {
-	0% {
-		--kernel-base-hue: 0deg;
-	}
-	100% {
-		--kernel-base-hue: 360deg;
-	}
 }
