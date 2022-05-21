@@ -13,44 +13,31 @@ import "./Home.css";
 const [open, setOpen] = createSignal(false);
 
 export default function Home(props) {
-	createEffect(() => {
-		console.log(open());
-	})
+    createEffect(() => console.log(open()));
 
 	return (
 		<>
-			<Button onClick={() => setOpen(!open())}>Open dialog</Button>
-			<Dialog
-				open={open()}
-				title="Dialog"
-				footer={<>
-					<Button onClick={() => setOpen(!open())}>Action</Button>
-					<Button onClick={() => setOpen(!open())}>Scary Action</Button>
-				</>}
-			>
-				test1
-			</Dialog>
 			<div class="kernel-home-links">
 				<LinkCard
 					href="https://github.com/kernel-mod/electron"
-                    target="_blank"
-                    rel="noreferrer noopener"
+					target="_blank"
+					rel="noreferrer noopener"
 					icon={<Book />}
 					title="Documentation"
 					description="Get started with Kernel."
 				/>
 				<LinkCard
 					href="https://github.com/kernel-mod/electron"
-                    target="_blank"
-                    rel="noreferrer noopener"
+					target="_blank"
+					rel="noreferrer noopener"
 					icon={<GitHub />}
 					title="GitHub"
 					description="Found a bug?"
 				/>
 				<LinkCard
 					href="https://github.com/kernel-mod/electron"
-                    target="_blank"
-                    rel="noreferrer noopener"
+					target="_blank"
+					rel="noreferrer noopener"
 					icon={<Comment />}
 					title="Discord Server"
 					description="Need help?"
