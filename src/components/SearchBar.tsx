@@ -31,7 +31,7 @@ export default function SearchBar(props: Props) {
 
 	const handleInput = value => {
 		setValue(value);
-		if (typeof local.onInput === "function") local.onInput(value);
+		local.onInput?.(value);
 	};
 
 	return (

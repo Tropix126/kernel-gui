@@ -17,7 +17,7 @@ export default function Switch(props: Props) {
 
 	const handleChange = ({ target }: Event) => {
 		setChecked((target as HTMLInputElement).checked);
-		if (typeof merged.onChange === "function") merged.onChange(checked);
+		merged.onChange?.(checked);
 	};
 
 	return (
